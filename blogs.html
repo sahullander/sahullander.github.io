@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Steven Hullander | Blog</title>
+<meta name="description" content="Technical write-ups, research notes, and project deep dives covering offensive security, reverse engineering, and capability development." />
+
+<style>
+:root {
+  --bg: #0e1117;
+  --fg: #e6edf3;
+  --muted: #9da7b3;
+  --accent: #58a6ff;
+  --accent2: #ff6e58;
+  --card: #161b22;
+  --border: #222;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =======================
+   LAYOUT
+   ======================= */
+
+header, section, footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* =======================
+   BLOG GRID
+   ======================= */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.6rem;
+}
+
+/* =======================
+   BLOG CARD
+   ======================= */
+
+.blog-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,110,88,0.45);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  text-decoration: none;
+}
+
+.blog-image {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.blog-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.65)
+  );
+}
+
+.blog-content {
+  padding: 1.1rem 1.25rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-title {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+  color: var(--fg);
+}
+
+.blog-description {
+  color: var(--muted);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+/* =======================
+   BLOG META
+   ======================= */
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.blog-tag {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: #222;
+  color: var(--muted);
+}
+
+.blog-read {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Blog & Research</h1>
+  <p>
+    Technical write-ups, research notes, and project deep dives focused on offensive security,
+    reverse engineering, and capability development.
+  </p>
+</header>
+
+<section>
+
+  <div class="blog-grid">
+
+    <!-- BLOG CARD -->
+    <a href="blog/sentinel-architecture.html" class="blog-card">
+      <div class="blog-image" style="background-image: url('images/sentinel.jpg');"></div>
+      <div class="blog-content">
+        <h3 class="blog-title">Designing a Distributed Wireless Intelligence Platform</h3>
+        <p class="blog-description">
+          A deep dive into the architecture, tradeoffs, and lessons learned building Sentinel —
+          a distributed wireless collection and analysis platform.
+        </p>
+        <div class="blog-meta">
+          <span class="blog-tag">Wireless</span>
+          <span class="blog-tag">Python</span>
+          <span class="blog-tag">Architecture</span>
+        </div>
+        <div class="blog-read">Read article →</div>
+      </div>
+    </a>
+
+    <!-- BLOG CARD -->
+    <a href="blog/reversing-apple-continuity.html" class="blog-card">
+      <div class="blog-image" style="background-image: url('images/blabber.jpg');"></div>
+      <div class="blog-content">
+        <h3 class="blog-title">Reverse Engineering Apple Continuity Protocols</h3>
+        <p class="blog-description">
+          Exploring undocumented Apple Continuity behavior, protocol flows,
+          and how trusted device emulation was achieved.
+        </p>
+        <div class="blog-meta">
+          <span class="blog-tag">Reverse Engineering</span>
+          <span class="blog-tag">iOS</span>
+          <span class="blog-tag">Protocols</span>
+        </div>
+        <div class="blog-read">Read article →</div>
+      </div>
+    </a>
+
+    <!-- BLOG CARD -->
+    <a href="blog/cve-api-wrapper.html" class="blog-card">
+      <div class="blog-image" style="background-image: url('images/cve.jpg');"></div>
+      <div class="blog-content">
+        <h3 class="blog-title">Building a Practical CVE API CLI Tool</h3>
+        <p class="blog-description">
+          How and why I built a lightweight Python CLI to query the NVD CVE API,
+          summarize vulnerabilities, and support extensibility.
+        </p>
+        <div class="blog-meta">
+          <span class="blog-tag">Python</span>
+          <span class="blog-tag">Vulnerability Research</span>
+          <span class="blog-tag">APIs</span>
+        </div>
+        <div class="blog-read">Read article →</div>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    © 2026 Steven Hullander · Built with GitHub Pages · <a href="index.html" color="var(--accent)">Back to Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
