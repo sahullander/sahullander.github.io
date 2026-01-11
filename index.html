@@ -1,103 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Steven Hullander | Offensive Security & R&D</title>
-  <meta name="description" content="Offensive security engineer and capability developer specializing in reverse engineering, wireless security, Python tooling, and applied research." />
-  <style>
-    :root {
-      --bg: #0e1117;
-      --fg: #e6edf3;
-      --muted: #9da7b3;
-      --accent: #58a6ff;
-      --card: #161b22;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header {
-      padding: 4rem 1.5rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      color: var(--muted);
-      max-width: 800px;
-    }
-    nav {
-      margin-top: 1.5rem;
-    }
-    nav a {
-      margin-right: 1.2rem;
-      font-weight: 500;
-    }
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-    }
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-    .card {
-      background: var(--card);
-      padding: 1.25rem;
-      border-radius: 10px;
-      border: 1px solid #222;
-    }
-    .card h3 { margin-top: 0; }
-    .tag {
-      display: inline-block;
-      background: #222;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      margin-right: 0.4rem;
-      margin-top: 0.4rem;
-      color: var(--muted);
-    }
-    footer {
-      border-top: 1px solid #222;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      color: var(--muted);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Steven Hullander | Offensive Security & R&D</title>
+<meta name="description" content="Offensive security engineer and capability developer specializing in reverse engineering, wireless security, Python tooling, and applied research." />
+
+<style>
+:root {
+  --bg: #0e1117;
+  --fg: #e6edf3;
+  --muted: #9da7b3;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #222;
+  --star: #f5c518;
+  --accent2: #ff6e58;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =======================
+   LAYOUT
+   ======================= */
+
+header, section, footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(88,166,255,0.35),
+    transparent
+  );
+}
+
+/* =======================
+   HEADER
+   ======================= */
+
+header {
+  padding-top: 4rem;
+  background:
+    radial-gradient(
+      600px 200px at top left,
+      rgba(88,166,255,0.08),
+      transparent
+    );
+}
+
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.2rem;
+}
+
+header .tagline {
+  font-size: 1.05rem;
+  color: var(--accent2);
+  margin-bottom: 0.6rem;
+}
+
+header p {
+  color: var(--muted);
+  max-width: 800px;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  margin-right: 1.2rem;
+  font-weight: 500;
+}
+
+/* =======================
+   TYPOGRAPHY
+   ======================= */
+
+h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  margin-top: 0.4rem;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* =======================
+   GRIDS & CARDS
+   ======================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0)
+  ), var(--card);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(88,166,255,0.5);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* =======================
+   TAGS & STARS
+   ======================= */
+
+.tag {
+  display: inline-block;
+  background: #222;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+.stars {
+  color: var(--star);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+/* =======================
+   CERT TIMELINE
+   ======================= */
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: var(--border);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.timeline-container {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -9px;
+  background-color: var(--bg);
+  border: 3px solid var(--accent);
+  top: 18px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.left { left: 0; }
+.right { left: 50%; }
+.right::after { left: -9px; }
+
+.timeline-content {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(88,166,255,0.08),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Mobile timeline */
+@media (max-width: 768px) {
+  .timeline::after { left: 20px; }
+  .timeline-container {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 25px;
+  }
+  .timeline-container::after { left: 12px; }
+  .right { left: 0; }
+}
+
+/* =======================
+   HEADER SOCIALS
+   ======================= */
+
+.header-socials {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.header-socials a {
+  width: 22px;
+  height: 22px;
+  color: var(--muted);
+  display: inline-flex;
+}
+
+.header-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.header-socials svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
   <h1>Steven Hullander</h1>
+  <div class="tagline">Offensive Security • Reverse Engineering • Capability Development</div>
+
+  <div class="header-socials">
+    <a href="https://github.com/sahullander" target="_blank" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.01c-3.2.69-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.17a11.07 11.07 0 012.9-.39c.99 0 1.99.13 2.9.39 2.21-1.48 3.18-1.17 3.18-1.17.63 1.58.23 2.75.11 3.04.74.8 1.19 1.82 1.19 3.07 0 4.4-2.69 5.37-5.25 5.66.42.36.79 1.08.79 2.18v3.24c0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+    </a>
+
+     <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a2.98 2.98 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.59a2.98 2.98 0 00-2.1 2.1A31.3 31.3 0 000 12a31.3 31.3 0 00.5 5.81 2.98 2.98 0 002.1 2.1c1.9.59 9.4.59 9.4.59s7.5 0 9.4-.59a2.98 2.98 0 002.1-2.1A31.3 31.3 0 0024 12a31.3 31.3 0 00-.5-5.81zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true">  <path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85v5.5H9.47V9h3.4v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+    </a>
+  </div>
+
   <p>
     Offensive security engineer and capability R&D specialist with 9+ years of experience building tools,
-    reverse engineering complex systems, and translating cutting-edge research into real-world impact.
+    reverse engineering complex systems, and translating research into real-world impact.
   </p>
+
   <nav>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#expertise">Expertise</a>
     <a href="#certs">Certifications</a>
-    <a href="https://github.com/sahullander" target="_blank">GitHub</a>
   </nav>
 </header>
+
+<body>
 
 <section id="projects">
   <h2>Highlighted Projects</h2>
@@ -111,6 +365,7 @@
       <span class="tag">Python</span>
       <span class="tag">Wireless</span>
       <span class="tag">Distributed Systems</span>
+      <span class="tag"><a href="#">View Blog</a></span>
     </div>
     <div class="card">
       <h3>PurplePwny</h3>
@@ -120,6 +375,18 @@
       </p>
       <span class="tag">Offensive Security</span>
       <span class="tag">Automation</span>
+      <span class="tag"><a href="https://github.com/sahullander/Purple-Pwny" target="_blank">View Code</a></span>
+    </div>
+    <div class="card">
+      <h3>CVE API Wrapper</h3>
+      <p>
+        Lightweight Python CLI tool for querying the NVD CVE API to retrieve and summarize
+        vulnerability details by CVE ID, with JSON export and extensible filtering.
+      </p>
+      <span class="tag">Python</span>
+      <span class="tag">Vulnerability Research</span>
+      <span class="tag">APIs</span>
+      <span class="tag"><a href="https://github.com/sahullander/cve-api-wrapper" target="_blank">View Code</a></span>
     </div>
     <div class="card">
       <h3>Blabber</h3>
@@ -129,6 +396,7 @@
       <span class="tag">Reverse Engineering</span>
       <span class="tag">iOS</span>
       <span class="tag">Protocols</span>
+      <span class="tag"><a href="https://github.com/MarketStreetCyber/Blabber" target="_blank">View Code</a></span>
     </div>
     <div class="card">
       <h3>Client Tooling & Research</h3>
@@ -146,29 +414,46 @@
 <section id="experience">
   <h2>Professional Experience</h2>
   <div class="grid">
+
     <div class="card">
-      <h3>Senior Cybersecurity Engineering Instructor – SimSpace</h3>
+      <h3>Offensive Security Engineer & Capability Developer</h3>
       <p>
-        Designing adversary emulation capabilities, Red vs. Blue scenarios, and hands-on training
-        environments supporting multi-million-dollar contracts.
+        Designed and built custom offensive security tooling across wireless, mobile, API, and
+        distributed systems domains. Led vulnerability research, exploit development, and
+        adversary emulation efforts supporting real-world operational use cases.
       </p>
     </div>
+
     <div class="card">
-      <h3>Senior Penetration Tester / Consultant</h3>
+      <h3>Senior Penetration Tester & Technical Consultant</h3>
       <p>
-        Led IoT, wireless, mobile, cloud, and API penetration tests. Built custom exploitation tooling and
-        delivered executive-ready risk assessments.
+        Conducted advanced penetration tests against enterprise networks, APIs, cloud platforms,
+        IoT, and wireless environments. Delivered high-impact findings, custom exploit tooling,
+        and executive-ready reports for both commercial and government clients.
       </p>
     </div>
+
     <div class="card">
-      <h3>Cybersecurity Engineer – MITRE & Federal Roles</h3>
+      <h3>Cybersecurity Instructor & Red Team Content Author</h3>
       <p>
-        Conducted advanced wireless and mobile research, authored Python analysis tools, and contributed
-        intelligence and vulnerability research consumed across government organizations.
+        Developed hands-on offensive security training content, labs, and adversary simulation
+        scenarios. Taught advanced tradecraft spanning red team operations, detection engineering,
+        and real-world attacker techniques in complex environments.
       </p>
     </div>
+
+    <div class="card">
+      <h3>Applied Researcher – Wireless & Mobile Security</h3>
+      <p>
+        Performed applied research into wireless protocols, mobile platforms, and proprietary
+        device ecosystems. Reverse engineered undocumented behaviors, authored Python analysis
+        tooling, and produced research consumed across operational and intelligence teams.
+      </p>
+    </div>
+
   </div>
 </section>
+
 
 <section id="expertise">
   <h2>Core Expertise</h2>
@@ -194,13 +479,79 @@
 
 <section id="certs">
   <h2>Certifications</h2>
+  <p class="section-subtitle">Progression of formal credentials alongside hands-on offensive work</p>
+
+  <div class="timeline">
+
+    <div class="timeline-container left">
+      <div class="timeline-content">
+        <h3>2024 — <a href="https://www.credly.com/badges/19f92ac6-e998-418b-a8de-6affa19b5517/linked_in_profile">API Security Certified Professional (ASCP)</a></h3>
+        <p>Advanced API exploitation, abuse patterns, and real-world assessment techniques.</p>
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-content">
+      <h3>2023 — <a href="https://www.credly.com/badges/3caf895d-56d0-49c3-b7c6-36854e8cac02/linked_in_profile">GIAC Advisory Board</a></h3>
+        <p>Certified professionals who demonstrate exemplary performance on GIAC exams.</p>
+        <h3>2023 — <a href="https://www.giac.org/certified-professional/Steven-Hullander/228718">GIAC Assessing Wireless Networks (GAWN)</a></h3>
+        <p>Enterprise wireless testing across WPA/WPA2/WPA-Enterprise environments.</p>
+        <h3>2023 — <a href="https://credential.net/48a3b16f-0df3-498c-827e-9768b3c4bd7f">OffSec Wireless Professional (OSWP)</a></h3>
+        <p>Hands-on offensive wireless operations and exploitation workflows.</p>
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-content">
+        <h3>2022 — <a href="https://certs.ine.com/1fa0b06f-7b54-4c7d-b356-a1b385adec40#gs.ey8iz5">eJPT</a></h3>
+        <p>Foundational penetration testing across networks and web applications.</p>
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-content">
+        <h3>2019 — <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/0D4H9BHG7HV41NS5">CompTIA Security+</a></h3>
+        <h3>2019 — <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/2F8N450E63111J92">CompTIA Network+</a></h3>
+        <p>Core security and networking fundamentals supporting later specialization.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="reviews">
+  <h2>Client Reviews</h2>
+  <p class="section-subtitle">Selected reviews from Upwork (Top Rated, 100% Job Success)</p>
   <div class="grid">
     <div class="card">
-      <p>API Security Certified Professional (ASCP)</p>
-      <p>GIAC Assessing Wireless Networks (GAWN)</p>
-      <p>OffSec Wireless Professional (OSWP)</p>
-      <p>eJPT</p>
-      <p>CompTIA Security+ / Network+</p>
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Create Algorithm for Data Mining</p>
+      <p>"Steven understood what we were asking for even when we didn't know the terminology. He is very responsive, friendly and helpful. He went above and beyond to create a tool we could use in a timely manner."</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Python Script to Scrape Dynamic Web Pages</p>
+      <p>"This is the third contract I have completed with Steven. He is extremely professional and patient. The quality of his work is top notch and better than on time. I look forward to working with Steven in the future."</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Python Script to Scrape Dynamic Web Pages</p>
+      <p>"I have worked with Steven twice now and both engagements went swimmingly. Steven is fast, accurate and very professional. I will be working with Steven in the future."</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Python Script to Automate Skype Reports</p>
+      <p>"Steven did a great job on this project. He's very responsive and provides a solid product with great support. I'm looking forward to future projects with Steven in the near future"</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Penetration Testing of API Application & Associated Network</p>
+      <p>"Great work!"</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>Project:</strong> Network Pentest for In-Scope App</p>
+      <p>"Steven was able to help with scope clarity, and completed the assessment with high quality. We look forward to using his service again next time."</p>
     </div>
   </div>
 </section>
