@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steven Hullander | Offensive Security & R&D</title>
+  <meta name="description" content="Offensive security engineer and capability developer specializing in reverse engineering, wireless security, Python tooling, and applied research." />
+  <style>
+    :root {
+      --bg: #0e1117;
+      --fg: #e6edf3;
+      --muted: #9da7b3;
+      --accent: #58a6ff;
+      --card: #161b22;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 4rem 1.5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--muted);
+      max-width: 800px;
+    }
+    nav {
+      margin-top: 1.5rem;
+    }
+    nav a {
+      margin-right: 1.2rem;
+      font-weight: 500;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.25rem;
+      border-radius: 10px;
+      border: 1px solid #222;
+    }
+    .card h3 { margin-top: 0; }
+    .tag {
+      display: inline-block;
+      background: #222;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      margin-right: 0.4rem;
+      margin-top: 0.4rem;
+      color: var(--muted);
+    }
+    footer {
+      border-top: 1px solid #222;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Steven Hullander</h1>
+  <p>
+    Offensive security engineer and capability R&D specialist with 9+ years of experience building tools,
+    reverse engineering complex systems, and translating cutting-edge research into real-world impact.
+  </p>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#certs">Certifications</a>
+    <a href="https://github.com/sahullander" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<section id="projects">
+  <h2>Highlighted Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Sentinel</h3>
+      <p>
+        Large-scale wireless intelligence platform using distributed Python collection nodes, mTLS,
+        FastAPI ingestion, RabbitMQ, and MySQL-backed analytics.
+      </p>
+      <span class="tag">Python</span>
+      <span class="tag">Wireless</span>
+      <span class="tag">Distributed Systems</span>
+    </div>
+    <div class="card">
+      <h3>PurplePwny</h3>
+      <p>
+        Automated penetration testing framework leveraging Metasploit to identify and exploit subnet-level
+        weaknesses at scale.
+      </p>
+      <span class="tag">Offensive Security</span>
+      <span class="tag">Automation</span>
+    </div>
+    <div class="card">
+      <h3>Blabber</h3>
+      <p>
+        Reverse engineering of Apple Continuity protocols to emulate and mimic trusted device behavior.
+      </p>
+      <span class="tag">Reverse Engineering</span>
+      <span class="tag">iOS</span>
+      <span class="tag">Protocols</span>
+    </div>
+    <div class="card">
+      <h3>Client Tooling & Research</h3>
+      <p>
+        Custom Python tools for API exploitation, web scraping, data aggregation, and vulnerability research
+        delivered to consulting and government clients.
+      </p>
+      <span class="tag">Python</span>
+      <span class="tag">APIs</span>
+      <span class="tag">Data Engineering</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Professional Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Senior Cybersecurity Engineering Instructor – SimSpace</h3>
+      <p>
+        Designing adversary emulation capabilities, Red vs. Blue scenarios, and hands-on training
+        environments supporting multi-million-dollar contracts.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Senior Penetration Tester / Consultant</h3>
+      <p>
+        Led IoT, wireless, mobile, cloud, and API penetration tests. Built custom exploitation tooling and
+        delivered executive-ready risk assessments.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Cybersecurity Engineer – MITRE & Federal Roles</h3>
+      <p>
+        Conducted advanced wireless and mobile research, authored Python analysis tools, and contributed
+        intelligence and vulnerability research consumed across government organizations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <h2>Core Expertise</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Offensive Security</h3>
+      <p>Wireless exploitation, API abuse, web application testing, mobile and IoT assessments.</p>
+    </div>
+    <div class="card">
+      <h3>Reverse Engineering</h3>
+      <p>iOS firmware, proprietary protocols, undocumented APIs, and device behavior analysis.</p>
+    </div>
+    <div class="card">
+      <h3>Capability Development</h3>
+      <p>Rapid prototyping, tooling pipelines, scalable architectures, and adversary emulation.</p>
+    </div>
+    <div class="card">
+      <h3>Python Engineering</h3>
+      <p>Automation, scraping, data analysis, distributed systems, and research tooling.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <h2>Certifications</h2>
+  <div class="grid">
+    <div class="card">
+      <p>API Security Certified Professional (ASCP)</p>
+      <p>GIAC Assessing Wireless Networks (GAWN)</p>
+      <p>OffSec Wireless Professional (OSWP)</p>
+      <p>eJPT</p>
+      <p>CompTIA Security+ / Network+</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2026 Steven Hullander · Built with GitHub Pages · <a href="https://github.com/sahullander">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
