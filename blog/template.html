@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Blog Title Here | Steven Hullander</title>
+<meta name="description" content="Short description of the blog post for SEO and previews." />
+
+<style>
+:root {
+  --bg: #0e1117;
+  --fg: #e6edf3;
+  --muted: #9da7b3;
+  --accent: #58a6ff;
+  --accent2: #ff6e58;
+  --card: #161b22;
+  --border: #222;
+  --code-bg: #0b0f14;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+               Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   LAYOUT
+   ======================= */
+
+header, main, footer {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem 1.5rem;
+}
+
+header {
+  padding-top: 3.5rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+
+/* =======================
+   HEADER
+   ======================= */
+
+.site-title {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.site-title a {
+  color: var(--muted);
+}
+
+.site-title a:hover {
+  color: var(--accent);
+}
+
+.blog-title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+.blog-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.blog-tags {
+  margin-top: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #222;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+  color: var(--muted);
+}
+
+/* =======================
+   CONTENT
+   ======================= */
+
+main h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+}
+
+main h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  color: var(--accent2);
+}
+
+main p {
+  margin-bottom: 1.2rem;
+  color: var(--fg);
+}
+
+main ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.4rem;
+  background: var(--card);
+  border-left: 4px solid var(--accent2);
+  color: var(--muted);
+  border-radius: 6px;
+}
+
+/* =======================
+   CODE BLOCKS
+   ======================= */
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.8rem 0;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+/* Inline code */
+p code {
+  background: var(--code-bg);
+  padding: 0.15rem 0.35rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+
+/* =======================
+   IMAGES
+   ======================= */
+
+.blog-image {
+  margin: 2.5rem 0;
+}
+
+.blog-image img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.blog-image figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =======================
+   NAV FOOTER
+   ======================= */
+
+.blog-footer-nav {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.blog-footer-nav a {
+  color: var(--accent);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="site-title">
+    <a href="/blogs.html">← Back to Blogs</a>
+  </div>
+
+  <h1 class="blog-title">Blog Title Goes Here</h1>
+
+  <div class="blog-meta">
+    Published: January 2026 · 8 min read
+  </div>
+
+  <div class="blog-tags">
+    <span class="tag">Reverse Engineering</span>
+    <span class="tag">Python</span>
+    <span class="tag">Research</span>
+  </div>
+</header>
+
+<main>
+
+  <p>
+    Intro paragraph. Clearly state the problem, why it matters, and what the reader
+    will learn. This should hook people coming from Twitter, YouTube, or GitHub.
+  </p>
+
+  <h2>Background</h2>
+
+  <p>
+    Explain the technical background, assumptions, or environment. Avoid fluff.
+    This is where you establish credibility.
+  </p>
+
+  <blockquote>
+    This is a callout for an important takeaway, pitfall, or insight.
+  </blockquote>
+
+  <h2>Technical Breakdown</h2>
+
+  <p>
+    Walk through the implementation, protocol behavior, exploit chain, or tooling.
+  </p>
+
+  <pre><code>
+def example():
+    print("Technical content goes here")
+  </code></pre>
+
+  <h3>Common Pitfalls</h3>
+
+  <ul>
+    <li>Mistake #1</li>
+    <li>Mistake #2</li>
+    <li>Mistake #3</li>
+  </ul>
+
+  <figure class="blog-image">
+    <img src="images/example.png" alt="Example diagram">
+    <figcaption>Optional image caption explaining the figure</figcaption>
+  </figure>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    Summarize what was learned, why it matters, and how this applies to real-world
+    offensive security or research workflows.
+  </p>
+
+</main>
+
+<footer>
+  <div class="blog-footer-nav">
+    <a href="/blogs.html">← Back to Blogs</a>
+    <a href="https://github.com/sahullander">GitHub</a>
+  </div>
+
+  <p>
+    © 2026 Steven Hullander · <a href="index.html">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>

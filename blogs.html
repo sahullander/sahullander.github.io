@@ -156,12 +156,29 @@ footer {
   color: var(--muted);
   padding-bottom: 2rem;
 }
+
+.site-title {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.site-title a {
+  color: var(--muted);
+}
+
+.site-title a:hover {
+  color: var(--accent);
+}
 </style>
 </head>
 
 <body>
 
 <header>
+  <div class="site-title">
+    <a href="/index.html">← Back to Home</a>
+  </div>
   <h1>Blog & Research</h1>
   <p>
     Technical write-ups, research notes, and project deep dives focused on offensive security,
@@ -174,54 +191,42 @@ footer {
   <div class="blog-grid">
 
     <!-- BLOG CARD -->
-    <a href="blog/sentinel-architecture.html" class="blog-card">
-      <div class="blog-image" style="background-image: url('images/sentinel.jpg');"></div>
+    <a href="blog/burp-suite-certified-practitioner-review.html" class="blog-card">
+      <div class="blog-image" style="background-image: url('images/bscp.png');"></div>
       <div class="blog-content">
-        <h3 class="blog-title">Designing a Distributed Wireless Intelligence Platform</h3>
+        <h3 class="blog-title">Passing the BSCP in Under 30 Days</h3>
         <p class="blog-description">
-          A deep dive into the architecture, tradeoffs, and lessons learned building Sentinel —
-          a distributed wireless collection and analysis platform.
+          I passed the Burp Suite Certified Practitioner exam in under 30 days. I want to share what I learned,
+          resources I used, and help you pass the BSCP too!
+        </p>
+        <div class="blog-meta">
+          <span class="blog-tag">Certification</span>
+          <span class="blog-tag">Review</span>
+          <span class="blog-tag">Tips</span>
+          <span class="blog-tag">Blog</span>
+        </div>
+        <div class="blog-read">Read article →</div>
+      </div>
+    </a>
+
+    <!-- BLOG CARD -->
+    <a href="under-construction.html" class="blog-card">
+      <div class="blog-image" style="background-image: url('images/sentinel.png');"></div>
+      <div class="blog-content">
+        <h3 class="blog-title">Sentinel - Coming soon!</h3>
+        <!-- <p class="blog-description">
+          Large-scale wireless intelligence platform using distributed Python collection nodes,
+          mTLS, FastAPI ingestion, RabbitMQ, and MySQL-backed analytics.
+        </p> -->
+        <p class="blog-description">
+          Large-scale wireless intelligence platform using distributed Python collection nodes,
+          mTLS, FastAPI ingestion, RabbitMQ, and MySQL-backed analytics.
         </p>
         <div class="blog-meta">
           <span class="blog-tag">Wireless</span>
-          <span class="blog-tag">Python</span>
-          <span class="blog-tag">Architecture</span>
-        </div>
-        <div class="blog-read">Read article →</div>
-      </div>
-    </a>
-
-    <!-- BLOG CARD -->
-    <a href="blog/reversing-apple-continuity.html" class="blog-card">
-      <div class="blog-image" style="background-image: url('images/blabber.jpg');"></div>
-      <div class="blog-content">
-        <h3 class="blog-title">Reverse Engineering Apple Continuity Protocols</h3>
-        <p class="blog-description">
-          Exploring undocumented Apple Continuity behavior, protocol flows,
-          and how trusted device emulation was achieved.
-        </p>
-        <div class="blog-meta">
-          <span class="blog-tag">Reverse Engineering</span>
-          <span class="blog-tag">iOS</span>
-          <span class="blog-tag">Protocols</span>
-        </div>
-        <div class="blog-read">Read article →</div>
-      </div>
-    </a>
-
-    <!-- BLOG CARD -->
-    <a href="blog/cve-api-wrapper.html" class="blog-card">
-      <div class="blog-image" style="background-image: url('images/cve.jpg');"></div>
-      <div class="blog-content">
-        <h3 class="blog-title">Building a Practical CVE API CLI Tool</h3>
-        <p class="blog-description">
-          How and why I built a lightweight Python CLI to query the NVD CVE API,
-          summarize vulnerabilities, and support extensibility.
-        </p>
-        <div class="blog-meta">
-          <span class="blog-tag">Python</span>
-          <span class="blog-tag">Vulnerability Research</span>
-          <span class="blog-tag">APIs</span>
+          <span class="blog-tag">Research</span>
+          <span class="blog-tag">System Architecture</span>
+          <span class="blog-tag">Blog</span>
         </div>
         <div class="blog-read">Read article →</div>
       </div>
@@ -233,7 +238,7 @@ footer {
 
 <footer>
   <p>
-    © 2026 Steven Hullander · Built with GitHub Pages · <a href="index.html" color="var(--accent)">Back to Home</a>
+    © 2026 Steven Hullander · <a href="index.html" color="var(--accent)">Home</a>
   </p>
 </footer>
 

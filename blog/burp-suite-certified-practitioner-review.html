@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Passing the BSCP in Under 30 Days | Steven Hullander</title>
+<meta name="description" content="Short description of the blog post for SEO and previews." />
+
+<style>
+:root {
+  --bg: #0e1117;
+  --fg: #e6edf3;
+  --muted: #9da7b3;
+  --accent: #58a6ff;
+  --accent2: #ff6e58;
+  --card: #161b22;
+  --border: #222;
+  --code-bg: #0b0f14;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+               Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   LAYOUT
+   ======================= */
+
+header, main, footer {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem 1.5rem;
+}
+
+header {
+  padding-top: 2rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+
+/* =======================
+   HERO IMAGE
+   ======================= */
+
+.blog-hero {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.blog-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.blog-hero figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =======================
+   HEADER
+   ======================= */
+
+.site-title {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.site-title a {
+  color: var(--muted);
+}
+
+.site-title a:hover {
+  color: var(--accent);
+}
+
+.blog-title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+.blog-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.blog-tags {
+  margin-top: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #222;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+  color: var(--muted);
+}
+
+/* =======================
+   CONTENT
+   ======================= */
+
+main h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+}
+
+main h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  color: var(--accent2);
+}
+
+main p {
+  margin-bottom: 1.2rem;
+  color: var(--fg);
+}
+
+main ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.4rem;
+  background: var(--card);
+  border-left: 4px solid var(--accent2);
+  color: var(--muted);
+  border-radius: 6px;
+}
+
+/* =======================
+   CODE BLOCKS
+   ======================= */
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.8rem 0;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+p code {
+  background: var(--code-bg);
+  padding: 0.15rem 0.35rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+
+/* =======================
+   INLINE IMAGES
+   ======================= */
+
+.blog-image {
+  margin: 2.5rem 0;
+}
+
+.blog-image img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.blog-image figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =======================
+   NAV FOOTER
+   ======================= */
+
+.blog-footer-nav {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.blog-footer-nav a {
+  color: var(--accent);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO IMAGE -->
+<figure class="blog-hero">
+  <img src="/images/bscp.png" alt="Hero image describing the blog topic">
+</figure>
+
+<header>
+  <div class="site-title">
+    <a href="/blogs.html">← Back to Blogs</a>
+  </div>
+
+  <h1 class="blog-title">Passing the BSCP in Under 30 Days</h1>
+
+  <div class="blog-meta">
+    Published: January 2026 · 5 min read
+  </div>
+
+  <div class="blog-tags">
+        <span class="tag">Certification</span>
+        <span class="tag">Review</span>
+        <span class="tag">Tips</span>
+        <span class="tag">Blog</span>
+  </div>
+</header>
+
+<main>
+
+  <p>
+    The Burp Suite Certified Practitioner exam is both challenging and fun. The exam will test your ability to own 2 seperate web applications
+    by identifying, chaining, and exploiting a wide variety of vulnerabiliies. Although challenging, I was able to prep for and pass the BSCP 
+    exam in 22 days. Here are my key tips and takeaways that I haven't seen discussed elsewhere.
+  </p>
+
+  <h2>Organization</h2>
+
+  <p>
+    Because the exam is limited to 4 hours, ensuring you are organized is essential. I utilized browser tab groups to help organize resources during the exam.
+    Below is a list of tabs I kept open and the groups I organized them into during the exam.
+    <div class="blog-image"><img src="images/bscp-organization.png" alt="bscp-organization"></div>
+    <ul>
+        <details>
+            <summary>Exam</summary>
+            <ul>
+                <li>Proctoring software</li>
+                <li>Exam "progress dashboard"</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>YT</summary>
+            <ul>
+                <li>7 hour <a href="https://www.youtube.com/watch?v=3fjYSXrqU3o&t=4420s">background music</a></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>App 1</summary>
+            <ul>
+                <li>App 1 | application</li>
+                <li>App 1 | exploitation server</li>
+                <li>App 1 | exploitation server logs</li>
+                <li>App 1 | email server</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>App 2</summary>
+            <ul>
+                <li>App 2 | application</li>
+                <li>App 2 | exploitation server</li>
+                <li>App 2 | exploitation server logs</li>
+                <li>App 2 | email server</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Burp Academy</summary>
+            <ul>
+                <li><a href="https://portswigger.net/web-security/all-topics">All topics</a></li>
+                <li>Other "All ___ labs" for certain topics for easy referencing</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Resources</summary>
+            <ul>
+                <li>ChatGPT (didn't need)</li>
+                <li><a href="https://github.com/D4mianWayne/BSCP/tree/main/cheatsheet">D4mianWayne GitHub</a></li>
+                <li><a href="https://github.com/DingyShark/BurpSuiteCertifiedPractitioner">DingyShark GitHub</a></li>
+                <li><a href="https://github.com/botesjuan/Burp-Suite-Certified-Practitioner-Exam-Study?tab=readme-ov-file">botesjuan GitHub</a></li>
+                <li><a href="https://bscp.guide/">Dynamic Attack Path Tracker</a></li>
+            </ul>
+        </details>
+    </ul>
+
+  </p>
+
+  <blockquote>
+    Use this same organization when you attempt the practice exams to create that familiarization for the actual exam.
+  </blockquote>
+
+  <h2>Scanner Optimization</h2>
+
+  <p>
+    There is nothing worse than having "issues" generated for out-of-scope items. Here are the quick modifications I made to my Burp scope and 
+    scanner confiuration, before the exam started, to limit the noise. You can then adjust the display filters on various tools, such as "HTTP History"
+    to show only in-scope items. Of note, once I completed App 1, I updated the scope to include the full URL for App 2 to easily hide issues generated for App 1.
+  </p>
+
+  <div class="blog-image"><img src="images/bscp-scope.png" alt="bscp-scope"></div>
+
+  <div class="blog-image"><img src="images/bscp-scan-configuration.png" alt="bscp-scan-configuration"></div>
+
+   <h2>Methodology</h2>
+
+  <p>
+    The resources listed above are fantastic for referencing payloads and different attacks for the various vulnerabilities. One thing that helped me was 
+    creating an initial game-plan, so that I knew exactly what to do once the exam started. You plan may differ, but at a high-level my approach to starting was:
+  </p>
+
+   <ul>
+    <li>Open App 1 resources in tabs (see "Organization" > "App 1" above)</li>
+    <li>Copy the App URL into Burp Proxy browser</li>
+    <li>Attempt login and/or password reset functionality for 1 known ("carlos"/"administrator") and 1 unknown user ("notreallyreal")</li>
+    <li>Analyze response differences in both of the above, then send that request to "intruder" and run a bruteforce to look for valid creds, other users, etc.</li>
+    <li>Perform a "click-through" - click through all application functionality, submitting data where applicable, and gain familiarization with the application</li>
+    <li>Run targeted scans on all parameters in the request body and URL</li>
+    <li>Right-click request > Extensions > * run extension focused scans *</li>
+    <li>Check issues raised by the scanner</li>
+    <li>Start with any obvious vulnerabilties</li>
+  </ul>
+
+    <blockquote>
+        The exam states that there is only 1 active user for each applicaiton. Meaning, if Stage 1 requires an active user to exploit vulnerability
+        then Stage 2 does not (and visa versa). I recommend noting which attacks require user interaction and which ones do not to help eliminate wasting time. 
+    </blockquote>
+
+    <div class="blog-image"><img src="images/bscp-extensions.png" alt="bscp-extensions"></div>
+
+  <h3>Common Pitfalls to Avoid</h3>
+
+  <ul>
+    <li>Aimlessly spraying payloads everywhere - creativity is great, but don't throw pasta at the wall the entire exam</li>
+    <li>Switching between the two applications too frequently</li>
+    <li>Spending too much time on vulnerabilities that aren't actually exploitable</li>
+    <li>Rushing and/or panicking - you have time :)</li>
+    <li>Giving up - don't!
+        <ul>
+            <li>During my final attempt of the exam, I got flag 5/6 with ~17 minutes remaining and the final flag with ~6 minutes remaining.</li>
+        </ul>
+    </li>
+  </ul>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    The Burp Suite Certified Practitioner exam was actually quite fun. It was a great reminder that during pentests, organization and a having a solid
+    game-plan can make a huge difference in your overall effectiveness. If you are planning to take the BSCP exam soon, I wish you the best of luck! If this
+    blog is benificial, I would love to hear from you on <a href="https://www.linkedin.com/in/steven-hullander/">LinkedIn</a>.
+  </p>
+
+</main>
+
+<footer>
+  <div class="blog-footer-nav">
+    <a href="/blogs.html">← Back to Blogs</a>
+    <a href="https://github.com/sahullander">GitHub</a>
+  </div>
+
+  <p>
+    © 2026 Steven Hullander · <a href="index.html">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
